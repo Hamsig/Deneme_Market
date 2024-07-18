@@ -6,7 +6,7 @@ public class Version {
 
     private String name;
     private String version;
-
+    private Item item;
 
     public String getName() {
         return name;
@@ -16,9 +16,16 @@ public class Version {
         return version;
     }
 
+    public Item getItem() {
+        return item;
+    }
 
     @Override
     public String toString() {
-        return "Name" + getName() + " Version" + getVersion();
+        return "Version{" +
+                "name='" + getName() + '\'' +
+                ", version='" + getVersion() + '\'' +
+                ", item=" + getItem() +
+                '}';
     }
 }
