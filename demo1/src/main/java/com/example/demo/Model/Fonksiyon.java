@@ -1,6 +1,12 @@
 package com.example.demo.Model;
 
-public class Fonksiyon {
+import lombok.Getter;
+import lombok.SneakyThrows;
+
+import java.sql.*;
+
+@Getter
+public abstract class Fonksiyon {
 
         private String name;
 
@@ -8,10 +14,24 @@ public class Fonksiyon {
         return name;
     }
 
-    public String Task() {
-        boolean b = name.equals("item-add");
+    public String Task() throws SQLException {
+        boolean b = getName().equals("item-add");
 
-        if (b == true) {
+        System.out.println(b);
+
+        if (b) {
+
+            String sql = "test_database2";
+
+            String url = "jdbc:mysql://localhost/";
+            String username = "root";
+            String password = "0000";
+
+            Connection c = DriverManager.getConnection(url,username,password);
+            Statement st = c.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+
+            System.out.println(rs.getString(1));
 
             // data base
 
@@ -19,7 +39,7 @@ public class Fonksiyon {
 
             //sonra geri döndür
 
-            return "item added";
+            return rs.getString(1);
         } else {
 
             // data base
@@ -30,5 +50,7 @@ public class Fonksiyon {
 
             return "item";
         }
+
     }
+
 }
