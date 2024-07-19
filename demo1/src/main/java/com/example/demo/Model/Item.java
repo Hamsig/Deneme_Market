@@ -4,6 +4,7 @@ public class Item {
 
     private String name;
     private String description;
+    private String rank;
 
     public String getName() {
         return name;
@@ -13,8 +14,14 @@ public class Item {
         return description;
     }
 
+    public String getRank() {
+        return rank;
+    }
+
     @Override
     public String toString() {
-        return "name: " + getName() + " description:" + getDescription();
+        return  "\n [ITEM_NAME]: " + getName() + "\n" +
+                " [ITEM_DESCRIPTION]: " + getDescription() +
+                "[ITEM_RANK: ]" + getRank();
     }
 }
