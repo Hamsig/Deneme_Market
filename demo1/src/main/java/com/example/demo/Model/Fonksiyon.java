@@ -15,10 +15,18 @@ public class Fonksiyon {
 
             // data base
 
+            // itemi data base e ekle
+
+            //sonra geri döndür
+
             return "item added";
         } else {
 
             // data base
+
+            // item varmı kontroll et
+
+            // varsa geri item ı döndür
 
             return "item";
         }
