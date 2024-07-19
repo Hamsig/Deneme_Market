@@ -2,27 +2,25 @@ package com.example.demo.Model;
 
 public class Fonksiyon {
 
-    private String task;
-    private Item item;
+        private String name;
 
-    public String getTask() {
-        return task;
+    public String getName() {
+        return name;
     }
 
-    public Item getItem() {
-        return item;
-    }
-
-    public Item Am() {
-        boolean b = getTask().equals("set");
+    public String Task() {
+        boolean b = name.equals("item-add");
 
         if (b == true) {
 
+            // data base
 
-            return getItem(); // kardeşş burayı değiştir
-        }else {
+            return "item added";
+        } else {
 
-            return getItem();
+            // data base
+
+            return "item";
         }
     }
 }
